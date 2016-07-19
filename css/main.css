@@ -1,0 +1,61 @@
+* {
+
+}
+.customer {
+
+}
+.customer .sellerDiv {
+
+}
+.sellerDiv h4 {
+
+}
+.sellerDiv p {
+
+}
+.sellerDiv label {
+
+}
+.sellerDiv input {
+
+}
+.sellerDiv button, .buyerDiv button {
+	margin: 10px auto;
+}
+.main {
+
+}
+#here{
+
+}
+.main .item {
+	text-align: center;
+    border: 1px solid black;
+    height: 470px;
+    margin: 30px auto;
+}
+.main .item h1 {
+	font-size: 3em;
+}
+.main .item h2 {
+	font-size: 2em;
+	margin-top: 0;
+}
+.main .item h3 {
+	font-size: 1em;
+	margin-top: 0;
+}
+.main .item img {
+	width: 200px;
+	height: 222px;
+    margin: 5px auto;
+}
+.main .item h4 {
+
+}
+.search {
+	background-color: red
+}
+.hidden {
+	display: none;
+}
