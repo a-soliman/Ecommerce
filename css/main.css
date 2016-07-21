@@ -2,10 +2,13 @@
 
 }
 .customer {
-
+	    margin-top: 50px;
 }
 .customer .sellerDiv {
-
+	padding: 10px 60px;
+    background-color: #f5f5f5;
+    border-radius: 80px;
+    box-shadow: 1px 2px 18px #6f5d5d;
 }
 .sellerDiv h4 {
 
@@ -21,6 +24,16 @@
 }
 .sellerDiv button, .buyerDiv button {
 	margin: 10px auto;
+    box-shadow: 1px 1px 7px #000000;
+}
+.showHideDiv {
+	text-align: center;
+	margin: 20px auto;
+}
+.showHideDiv button {
+	box-shadow: 1px 1px 7px #009688;
+	background-color: #6b2f2f;
+	color: white;
 }
 .main {
 
@@ -33,6 +46,7 @@
     border: 1px solid black;
     height: 470px;
     margin: 30px auto;
+    box-shadow: 5px 5px 5px #6f5d5d;
 }
 .main .item h1 {
 	font-size: 3em;
@@ -53,9 +67,42 @@
 .main .item h4 {
 
 }
+.main .item button {
+    box-shadow: 4px 3px 5px #6f5d5d;
+}
+footer {
+    background-color: #3e0606;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+footer p {
+	letter-spacing: 5px;
+}
+footer a {
+	color: #ffff00;
+}
+footer a:hover {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+
+
 .search {
 	background-color: red
 }
 .hidden {
 	display: none;
+}
+
+
+
+
+@media(max-width: 450px) {
+	.customer .sellerDiv {
+    	padding: 10px 10px;
+    	text-align: center;
+	}
 }
