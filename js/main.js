@@ -8,7 +8,7 @@ var customerDiv =document.getElementById('customer')
 //seller corner
 	//the col-sm-6
 sellerCol = document.createElement('div')
-	sellerCol.setAttribute('class', 'col-sm-6')
+	sellerCol.setAttribute('class', 'col-xs-12')
 	//the seller Div
 sellerDiv = document.createElement('div')
 	sellerDiv.setAttribute('class', 'sellerDiv')
@@ -100,118 +100,25 @@ sellerCol.appendChild(sellerDiv)
 // appending the col to the HTML <div id='customer'>
 customerDiv.appendChild(sellerCol)
 
+// show/hide button prepration
+	showHideButton = document.createElement('button')
+	showHideButton.className = 'btn btn-lg btn-success'
+	showHideButton.textContent = 'SHOW / HIDE'
+
+	showHideDiv = document.createElement('div')
+	showHideDiv.appendChild(showHideButton)
+	showHideDiv.setAttribute('class', 'showHideDiv col-xs-12')
+
+	newRow = document.createElement('div')
+	newRow.setAttribute('class', 'row')
+
+	newRow.appendChild(showHideDiv)
+
+	customerDiv.appendChild(newRow)
+
 // End of the seller corner
 //=================================================================
 
-//customer section ===> buyer corner
-
-// identifing the ouuput
-var customerDiv =document.getElementById('customer')
-
-	//the col-sm-6
-buyerCol = document.createElement('div')
-	buyerCol.setAttribute('class', 'col-sm-6')
-	//the buyer Div
-buyerDiv = document.createElement('div')
-	buyerDiv.setAttribute('class', 'buyerDiv')
-	
-	//buyer header
-buyerH4 = document.createElement('h4')
-buyerP = document.createElement('p')
-
-	buyerH4.textContent = "Buyer"
-	buyerP.textContent = 'Modify your search for a new phone..'
-
-	//make
-buyerMakeLabel =document.createElement('label')
-buyerMakeInput = document.createElement('input')
-
-	buyerMakeLabel.textContent = 'Make: '
-	//setting the attributes for the input
-	buyerMakeInput.setAttribute('class', 'form-control')
-	buyerMakeInput.setAttribute('type', 'text')
-	buyerMakeInput.setAttribute('placeholder', 'Apple, Samsung, Sony')
-	buyerMakeInput.setAttribute('id', 'buyerMake')
-
-	//model
-buyerModelLabel =document.createElement('label')
-buyerModelInput = document.createElement('input')
-
-	buyerModelLabel.textContent = 'Model: '
-	//setting the attributes for the input
-	buyerModelInput.setAttribute('class', 'form-control')
-	buyerModelInput.setAttribute('type', 'text')
-	buyerModelInput.setAttribute('placeholder', 'Galaxy S7, 6s-plus, xperia')
-	buyerModelInput.setAttribute('id', 'buyerModel')
-
-	//Color
-buyerColorLabel =document.createElement('label')
-buyerColorInput = document.createElement('input')
-
-	buyerColorLabel.textContent = 'Color: '
-	//setting the attributes for the input
-	buyerColorInput.setAttribute('class', 'form-control')
-	buyerColorInput.setAttribute('type', 'text')
-	buyerColorInput.setAttribute('placeholder', 'pink, white, dark-blue')
-	buyerColorInput.setAttribute('id', 'buyerColor')
-
-	//Image
-buyerImageLabel =document.createElement('label')
-buyerImageInput = document.createElement('input')
-
-	buyerImageLabel.textContent = 'Image Link: '
-	//setting the attributes for the input
-	buyerImageInput.setAttribute('class', 'form-control')
-	buyerImageInput.setAttribute('type', 'text')
-	buyerImageInput.setAttribute('placeholder', 'http://www.google.image.jpg')
-	buyerImageInput.setAttribute('id', 'buyerImage')
-	//price
-buyerPriceLabel =document.createElement('label')
-buyerPriceInput = document.createElement('input')
-
-	buyerPriceLabel.textContent = 'Price: '
-	//setting the attributes for the input
-	buyerPriceInput.setAttribute('class', 'form-control')
-	buyerPriceInput.setAttribute('type', 'num')
-	buyerPriceInput.setAttribute('placeholder', '500, 950, 400')
-	buyerPriceInput.setAttribute('id', 'buyerPrice')
-	//post item
-buyerButton = document.createElement('button')
-	buyerButton.textContent = 'Search'
-	buyerButton.setAttribute('class', 'btn btn-md')
-	buyerButton.setAttribute('onclick', 'searchPhone()')
-
-	// appending childs to sellerDiv
-buyerDiv.appendChild(buyerH4)
-buyerDiv.appendChild(buyerP)
-buyerDiv.appendChild(buyerMakeLabel)
-buyerDiv.appendChild(buyerMakeInput)
-buyerDiv.appendChild(buyerModelLabel)
-buyerDiv.appendChild(buyerModelInput)
-buyerDiv.appendChild(buyerColorLabel)
-buyerDiv.appendChild(buyerColorInput)
-buyerDiv.appendChild(buyerImageLabel)
-buyerDiv.appendChild(buyerImageInput)
-buyerDiv.appendChild(buyerPriceLabel)
-buyerDiv.appendChild(buyerPriceInput)
-buyerDiv.appendChild(buyerButton)
-
-// appending sellerDiv to sellerCol sm-6
-buyerCol.appendChild(buyerDiv)
-
-// appending the col to the HTML <div id='customer'>
-customerDiv.appendChild(buyerCol)
-
-
-
-
-
-
-
-
-
-
-// End of the buyer corner
 //=================================================================
 // End of the customer section
 //=================================================================
@@ -304,6 +211,10 @@ for (var i = 0; i < phoneArray.length; i++) {
 	var divHere =document.getElementById('here')
 	divHere.appendChild(newCol)
 
+	
+
+	
+
 }
 
 function postNewPhone() {
@@ -383,33 +294,8 @@ function postNewPhone() {
 			var divHere =document.getElementById('here')
 			
 			// like appending but to have it as a first child
-			divHere.insertBefore( newCol, divHere.firstChild );
+			divHere.insertBefore( newCol, divHere.firstChild )
 
 		} //else
 } // postNewPhone()
 
-function searchPhone() {
-
-	// to hide the whole products
-
-	// var divHere= document.getElementById('here').className = 'hidden'
-
-	//getting the entred data .value
-	var searchMake = document.getElementById('buyerMake').value.toLowerCase()
-	var searchModel = document.getElementById('buyerModel').value.toUpperCase()
-	var searchPrice = document.getElementById('buyerPrice').value
-
-	// the looping
-	for (var i = 0; i < phoneArray.length; i++) {
-		if (searchPrice == phoneArray[i].price) {
-			console.log('no match')
-		}// if statment
-		else {
-			console.log('got none')
-			delete phoneArray[i]
-			
-		}
-		
-	} // for loop
-
-}// searchPhone
